@@ -1,0 +1,4 @@
+void FullMode(void)
+{
+
+}
