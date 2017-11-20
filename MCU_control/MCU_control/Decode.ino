@@ -1,4 +1,15 @@
-﻿void Decode(int inputData, int* outputPort, char* outputComand)
+﻿void CollectData(void)
+{
+	usigned char inputData;
+	if(Serial.aviable() != 0)
+	{
+		inputData = Serial.read();
+		Serial.print("I received: ");
+        Serial.println(incomingByte, DEC);
+	}
+}
+
+void Decode(int inputData, int* outputPort, char* outputComand)
 {
 	*outputPort = inputData << 2 >> 2;
 
