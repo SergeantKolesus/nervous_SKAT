@@ -15,15 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Blink1.ino" />
-    <None Include="ServeFunctions.ino" />
-    <None Include="Decode.ino" />
+    <None Include="MCU_control.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Blink1.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Codes.h">
+    <ClInclude Include="__vm\.MCU_control.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

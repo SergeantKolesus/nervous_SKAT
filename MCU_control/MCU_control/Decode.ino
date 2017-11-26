@@ -1,17 +1,40 @@
-﻿void CollectData(void)
+﻿static unsigned char inputData;
+
+void CollectData(void)
 {
-	usigned char inputData;
-	if(Serial.aviable() != 0)
+	unsigned char port;
+	unsigned char command;
+
+	if(Serial.available() != 0)
 	{
 		inputData = Serial.read();
 		Serial.print("I received: ");
-        Serial.println(incomingByte, DEC);
+        Serial.println(inputData, DEC);
+		Decode(inputData, &port, &command);
+		switch (command)
+		{
+		case 'A':
+			digitalWrite(port, HIGH);
+			break;
+		case 'D':
+			digitalWrite(port, LOW);
+			break;
+		case 'C':
+			digitalWrite(port, !digitalRead(port));
+			//DEBUGGERB
+			digitalWrite(PD3, !digitalRead(port));
+			digitalWrite(PD1, !digitalRead(port));
+			//DEBUGGERE
+			break;
+		default:
+			break;
+		}
 	}
 }
 
-void Decode(int inputData, int* outputPort, char* outputComand)
+void Decode(int inputData, unsigned char* outputPort, unsigned char* outputComand)
 {
-	*outputPort = inputData << 2 >> 2;
+	*outputPort = inputData & 63;
 
 	inputData = inputData >> 6;
 
