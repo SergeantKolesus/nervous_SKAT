@@ -146,12 +146,14 @@
     <ClCompile Include="COM.c" />
     <ClCompile Include="Debug.c" />
     <ClCompile Include="Full.c" />
+    <ClCompile Include="Menu.c" />
     <ClCompile Include="PC-MCU_control.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="COM.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="Full.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
