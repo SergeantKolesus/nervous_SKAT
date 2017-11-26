@@ -22,8 +22,8 @@ void CollectData(void)
 		case 'C':
 			digitalWrite(port, !digitalRead(port));
 			//DEBUGGERB
-			digitalWrite(PD3, !digitalRead(port));
-			digitalWrite(PD1, !digitalRead(port));
+			digitalWrite(PD2, !digitalRead(port));
+			digitalWrite(PD1, digitalRead(port));
 			//DEBUGGERE
 			break;
 		default:
